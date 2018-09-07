@@ -1,0 +1,24 @@
+{
+  "name": "booker",
+  "version": "1.0.0",
+  "description": "LIBRARY With Delivery",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChandraShekarReddy1996/Booker.git"
+  },
+  "author": "Chandra Shekar Reddy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ChandraShekarReddy1996/Booker/issues"
+  },
+  "homepage": "https://github.com/ChandraShekarReddy1996/Booker#readme",
+  "dependencies": {
+    "bcrypt": "^3.0.0",
+    "express": "^4.16.3",
+    "jsonwebtoken": "^8.3.0"
+  }
+}
