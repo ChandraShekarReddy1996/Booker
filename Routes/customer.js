@@ -10,29 +10,36 @@ var addcustomer = (req, res) => {
   var password = req.body.password;
   var phone = req.body.phone;
 
-  var data = {phone : phone}
   async.waterfall(
     [
-      (data) => {
-        res.send({ message: "Its working" });
-        return data;
+      function getPhone(callback) {
+        var data = {phone : phone}
+        return callback(null,data)
       },
-      customerslist(data)
+      function customerslist(data,callback){
+        dbservice.find(data, "customers", (err, result) => {
+          //console.log(data, ">>>>>>>>>", err, result);
+          if (!Object.keys(result).lenth || result == null)
+          return callback(null,'UNIQUE')
+          else
+          return callback(null,'EXISTS')
+        })
+      },
+      (data,callback) => {
+        //console.log('>>>>>>>>>>>>> : ',data)
+        res.send({ message: "Its working" });
+        callback(null,data)
+      }
     ],
-    (err, result) => {
-      console.log('GOT IT HERE',err,result);
+    function (err,result){
+      if(err)
+      console.log('EveryThing is woring Finresult',err)
+      else
+      console.log('Got it',result)
     }
   );
 };
 
-var customerslist = (data,callback) => {
-  dbservice.find(data, "customers", (err, result) => {
-    console.log(data, ">>>>>>>>>", err, result);
-    if (result.keys == 0)
-      return callback(null, "UNIQUE")
-    else
-      return callback(null,'EXISTS');
-  });
-};
+
 
 module.exports = { addcustomer };
