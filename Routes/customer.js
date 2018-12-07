@@ -10,7 +10,7 @@ var addcustomer = async (req, res) => {
   var password = req.body.password;
   var phone = req.body.phone;
 
-var data = data1(req) 
+var data = await data1(req) 
 
 console.log(data)
 res.send({'Number' : data})
