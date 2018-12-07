@@ -17,7 +17,7 @@ res.send({'Number' : data})
 };
 
 
-var data3 = (req) => {
+var data5 = (req) => {
   console.log('The Number Should be -|/')
   return 5
 }
