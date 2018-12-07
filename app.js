@@ -11,7 +11,7 @@ app.use(bodyparser.json({ type: "application/*+json" }));
 app.listen(constants.PORT, () => {
   onConnection();
 });
-
+ 
 //Customer
 app.post("/addcustomer", jsonparser, customer.addcustomer);
 
