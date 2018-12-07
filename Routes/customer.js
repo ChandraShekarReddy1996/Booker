@@ -12,7 +12,7 @@ var addcustomer = async (req, res) => {
 
 var data = data1(req) 
 
-console.log(data)
+//console.log(data)
 res.send({'Number' : data})
 };
 
