@@ -11,7 +11,7 @@ var addcustomer = async (req, res) => {
   var phone = req.body.phone;
 
 var data = await data1(req) 
-
+ 
 //console.log(data)
 res.send({'Number' : data})
 };
